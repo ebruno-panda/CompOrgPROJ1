@@ -11,4 +11,12 @@ int main(){ //(4)
 	int M = N - 10; //(3)
 
 	while(contestar.length() != 10){ //(4)
-		cout << "Sorry. Iput must be exactly 10 characters." << endl;}} //(5)
+		cout << "Sorry. Input must be exactly 10 characters." << endl; //(5
+		cin >> contestar;} //(1)
+	for(int value = 0; value < 9; value++){//(2)
+   	 char actual = contestar[value]; //(3)
+   	 int dec = int(actual); //(4)
+   	 int holder; //(5)
+
+	
+	
