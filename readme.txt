@@ -1,1 +1,1 @@
-https://github.com/ebruno-panda/CompOrgPROJ1.git
+https://github.com/ebruno-panda/CompOrgPROJ1.git 
