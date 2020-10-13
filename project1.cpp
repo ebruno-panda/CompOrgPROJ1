@@ -14,4 +14,12 @@ int main(){ //(4)
 
 	else { //(4)
 	/*Will hold total of string base-N value*/
-	int record_says = 0; //(5)
+		int record_says = 0; //(5)
+
+		for(int value = 0; value < 10; value++){//(1)
+		char actual = contestar[value]; //(2) /*element value per index*/ 
+		int dec = int(actual); //(3) | ASCII decimal value of each character      
+
+     		 /*Casts charcater value in input to int value*/
+		stringstream ch; //(4)
+		ch << actual; int holder; ch >> holder; //(5)
