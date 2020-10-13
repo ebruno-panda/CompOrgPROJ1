@@ -33,3 +33,17 @@ int main(){ //(5)
 	        else if(dec >= 65 && dec <= 84){holder = dec - 55;} //(3) | upper case values to base-N
 	        else if(dec >= 97 && dec <= 116){holder = dec - 87;} //(4) | lower case values to base-N  
 	        else{holder = 0;}//(5) | if int value of char is 0, base-N of char is 0
+		
+		/*Adds base30 value of each char to total tracker throughout looping process*/
+	        record_says += holder; //(1)
+
+	        /*Debugging code left here*/
+	        // cout << "The value of " << actual << " has an ASCII value of " << dec << endl;
+	        // cout << "It's base-" << N << " value is " << holder << endl << endl;
+	        // cout << "The total base-" << N << " value of " << contestar << " is " << record_says <<endl;
+	        } //(2)
+	      /*Outputs final base-30 total*/
+	      cout << record_says << endl;} //(3)
+  
+    
+ 	    return 0;} //(4)
