@@ -46,4 +46,9 @@
 		bgt $t1, $s5, Zilch # char > ‘t’
 		nop
 		addiu $t1, $t1, -87 # convert: ‘a’=10,‘b’=11,etc 
-		add $v0, $v0, $t1 # $v0 = 0 + digit 	 
+		add $v0, $v0, $t1 # $v0 = 0 + digit
+		bne $t4, 10, recorsOn # branch if not end of string 
+		j ITERAR
+		
+	recorsOn:
+		addi $t4, $t4, 1 	 
