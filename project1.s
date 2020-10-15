@@ -51,4 +51,9 @@
 		j ITERAR
 		
 	recorsOn:
-		addi $t4, $t4, 1 	 
+		addi $t4, $t4, 1
+		add $v0, $v0, $t1 # $v0 = 0 + digit 
+		addiu $t0, $t0, 1 # point to next char 
+		lb $t1, ($t0) # load $t1 = next digit 
+		bne $t4, 10, ITERAR
+		j Finally 	 
