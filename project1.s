@@ -68,4 +68,7 @@
 		addi $v0, $v0, 0 # return 0 in $v0 
 		bne $t4, 10, ITERAR
 		j Finally
-	Finally: 	 
+	Finally:
+		li $v0, 4
+		la $a0, out
+		syscall 	 
