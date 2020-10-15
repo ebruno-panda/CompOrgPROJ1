@@ -56,4 +56,10 @@
 		addiu $t0, $t0, 1 # point to next char 
 		lb $t1, ($t0) # load $t1 = next digit 
 		bne $t4, 10, ITERAR
+		j Finally
+
+	spaceCount:
+		addi $v0, $v0, 0
+		addi $t4, $t4, 1
+		bne $t4, 10, ITERAR
 		j Finally 	 
