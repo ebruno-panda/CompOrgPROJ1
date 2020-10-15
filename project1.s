@@ -29,4 +29,10 @@
 		beq $t1, 0x20, spaceCount #checks for spaces
 		blt $t1, $t6, Zilch # char < ‘0’ 
 		bgt $t1, $t7, HEX # check if hex digit
-		bgt $t1, $t5, HEXS # check if little hex digit	 
+		bgt $t1, $t5, HEXS # check if little hex digit
+		subu $t1, $t1, $t6 # convert to integer 
+		j Finally # jump to Final integer 
+		
+	HEX: 
+		blt $t1, $t4, Zilch # char < ‘A’ 
+		bgt $t1, $t5, Zilch # char > ‘F’	 
