@@ -18,4 +18,11 @@
 		li $s4, 0x61 # $t4 = 'a' 
 		li $s5, 0x74 # $t7 = 't'
 		li $t4, 0x41 # $t4 = 'A' 
-		li $t5, 0x54 # $t7 = 'T' 
+		li $t5, 0x54 # $t7 = 'T'
+		li $t6, 0x30 # $t6 = '0' 
+		li $t7, 0x39 # $t7 = '9' 
+		li $v0, 0 # initialize $v0 = 0 
+		move $t0, $a0 # $t0 = pointer to string 
+		lb $t1, ($t0) # load $t1 = digit character
+
+	 
