@@ -25,4 +25,8 @@
 		move $t0, $a0 # $t0 = pointer to string 
 		lb $t1, ($t0) # load $t1 = digit character
 
-	 
+	ITERAR: 
+		beq $t1, 0x20, spaceCount #checks for spaces
+		blt $t1, $t6, Zilch # char < ‘0’ 
+		bgt $t1, $t7, HEX # check if hex digit
+		bgt $t1, $t5, HEXS # check if little hex digit	 
