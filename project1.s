@@ -35,4 +35,10 @@
 		
 	HEX: 
 		blt $t1, $t4, Zilch # char < ‘A’ 
-		bgt $t1, $t5, Zilch # char > ‘F’	 
+		bgt $t1, $t5, Zilch # char > ‘F’
+		nop
+		addiu $t1, $t1, -55 # convert: ‘A’=10,‘B’=11,etc 
+		bne $t4, 10, recorsOn # branch if not end of string 
+		j ITERAR
+		
+	HEXS:	 
