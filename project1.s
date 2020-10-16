@@ -46,26 +46,27 @@
 		bgt $t1, $s5, Zilch # char > ‘t’
 		nop
 		addiu $t1, $t1, -87 # convert: ‘a’=10,‘b’=11,etc 
-		add $v0, $v0, $t1 # $v0 = 0 + digit
+		add $v1, $v1, $t1 # $v0 = 0 + digit
 		bne $t4, 10, recorsOn # branch if not end of string 
 		j ITERAR
 		
 	recorsOn:
-		addi $t4, $t4, 1
-		add $v0, $v0, $t1 # $v0 = 0 + digit 
+		addi $t3, $t3, 1
+		add $v1, $v1, $t1 # $v0 = 0 + digit 
 		addiu $t0, $t0, 1 # point to next char 
 		lb $t1, ($t0) # load $t1 = next digit 
-		bne $t4, 10, ITERAR
+		bne $t3, 10, ITERAR
 		j Finally
 
 	spaceCount:
-		addi $v0, $v0, 0
+		addi $v1, $v1, 0
 		addi $t4, $t4, 1
 		bne $t4, 10, ITERAR
 		j Finally
 
 	Zilch: 
 		addi $v0, $v0, 0 # return 0 in $v0 
+		addi $t4, $t4, 1
 		bne $t4, 10, ITERAR
 		j Finally
 	Finally:
@@ -74,7 +75,7 @@
 		syscall
 
 		li $v0, 1
-		move $a0, $t0
+		move $a0, $v1
 		syscall
 		
 	li $v0, 10 #end of program
